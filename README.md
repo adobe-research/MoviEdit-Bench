@@ -7,7 +7,7 @@
 [Soo Ye Kim](https://sites.google.com/view/sooyekim),
 [Peihao Zhu](https://zpdesu.github.io/),
 [Jong Chul Ye](https://bispl-website.github.io/),
-[Chun-Hao Paul Huang](https://paulchhuang.wixsite.com/chhuang),
+[Chun-Hao Paul Huang](https://paulchhuang.wixsite.com/chhuang),<br>
 [Duygu Ceylan](https://www.duygu-ceylan.com/),
 [Yan Kang](https://research.adobe.com/person/yan-kang/),
 [Hyeonho Jeong](https://hyeonho99.github.io/)<sup>\*,†</sup>
