@@ -2,17 +2,15 @@
 
 # MoviEdit: Long-form Multi-Shot Video Editing Made Easy
 
-[Suhyeon Lee](https://hyn2028.github.io/)<sup>1,2,\*</sup>,
-[Zhengang Li](https://scholar.google.com/citations?user=hH1Oun0AAAAJ&hl=en)<sup>1</sup>,
-[Soo Ye Kim](https://sites.google.com/view/sooyekim)<sup>1</sup>,
-[Peihao Zhu](https://zpdesu.github.io/)<sup>1</sup>,
-[Jong Chul Ye](https://bispl-website.github.io/)<sup>2</sup>,
-[Chun-Hao Paul Huang](https://paulchhuang.wixsite.com/chhuang)<sup>1</sup>,
-[Duygu Ceylan](https://www.duygu-ceylan.com/)<sup>1</sup>,
-[Yan Kang](https://research.adobe.com/person/yan-kang/)<sup>1</sup>,
-[Hyeonho Jeong](https://hyeonho99.github.io/)<sup>1,\*,†</sup>
-
-<sup>1</sup>Adobe &nbsp;&nbsp; <sup>2</sup>KAIST
+[Suhyeon Lee](https://hyn2028.github.io/)<sup>\*</sup>,
+[Zhengang Li](https://scholar.google.com/citations?user=hH1Oun0AAAAJ&hl=en),
+[Soo Ye Kim](https://sites.google.com/view/sooyekim),
+[Peihao Zhu](https://zpdesu.github.io/),
+[Jong Chul Ye](https://bispl-website.github.io/),
+[Chun-Hao Paul Huang](https://paulchhuang.wixsite.com/chhuang),
+[Duygu Ceylan](https://www.duygu-ceylan.com/),
+[Yan Kang](https://research.adobe.com/person/yan-kang/),
+[Hyeonho Jeong](https://hyeonho99.github.io/)<sup>\*,†</sup>
 
 <sup>\*</sup>Equal Contribution &nbsp;&nbsp; <sup>†</sup>Tech Lead
 
