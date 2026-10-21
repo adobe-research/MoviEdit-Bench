@@ -2,7 +2,7 @@
 
 # MoviEdit: Long-form Multi-Shot Video Editing Made Easy
 
-<img src="https://img.shields.io/badge/Project_Page-Coming_Soon-lightgrey?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project Page (coming soon)">
+<a href="https://multi-shot-edit.github.io/"><img src="https://img.shields.io/badge/Project_Page-MoviEdit-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project Page"></a>
 <img src="https://img.shields.io/badge/arXiv-Coming_Soon-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="Paper (coming soon)">
 <a href="bench/README.md"><img src="https://img.shields.io/badge/MoviEdit--Bench-Code-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="MoviEdit-Bench"></a>
 
