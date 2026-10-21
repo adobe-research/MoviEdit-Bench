@@ -86,4 +86,4 @@ See [`bench/README.md`](bench/README.md) for details.
 
 ## License
 
-The Adobe-authored files in this repository are released under the Adobe Research License (noncommercial research use only). Third-party code under `bench/moviedit_bench/third_party/` keeps its original license. See [`LICENSE.md`](LICENSE.md) for the exact list of covered files.
+Refer to [`LICENSE.md`](LICENSE.md).
