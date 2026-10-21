@@ -2,6 +2,20 @@
 
 # MoviEdit: Long-form Multi-Shot Video Editing Made Easy
 
+[Suhyeon Lee](https://hyn2028.github.io/)<sup>1,2,\*</sup>,
+[Zhengang Li](https://scholar.google.com/citations?user=hH1Oun0AAAAJ&hl=en)<sup>1</sup>,
+[Soo Ye Kim](https://sites.google.com/view/sooyekim)<sup>1</sup>,
+[Peihao Zhu](https://zpdesu.github.io/)<sup>1</sup>,
+[Jong Chul Ye](https://bispl-website.github.io/)<sup>2</sup>,
+[Chun-Hao Paul Huang](https://paulchhuang.wixsite.com/chhuang)<sup>1</sup>,
+[Duygu Ceylan](https://www.duygu-ceylan.com/)<sup>1</sup>,
+[Yan Kang](https://research.adobe.com/person/yan-kang/)<sup>1</sup>,
+[Hyeonho Jeong](https://hyeonho99.github.io/)<sup>1,\*,†</sup>
+
+<sup>1</sup>Adobe &nbsp;&nbsp; <sup>2</sup>KAIST
+
+<sup>\*</sup>Equal Contribution &nbsp;&nbsp; <sup>†</sup>Tech Lead
+
 <a href="https://multi-shot-edit.github.io/"><img src="https://img.shields.io/badge/Project_Page-MoviEdit-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project Page"></a>
 <img src="https://img.shields.io/badge/arXiv-Coming_Soon-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="Paper (coming soon)">
 <a href="bench/README.md"><img src="https://img.shields.io/badge/MoviEdit--Bench-Code-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="MoviEdit-Bench"></a>
