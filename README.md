@@ -31,21 +31,26 @@ See [`bench/README.md`](bench/README.md) to get started.
 
 **Text-guided editing (V2V)**
 
-https://github.com/user-attachments/assets/c25b8ceb-9e12-42cd-b157-a0060f73dac2
 
-<sub>Source video: AI-generated cinematic clip.</sub>
+
+https://github.com/user-attachments/assets/be53c9ea-210e-49ef-9a2c-51af3907e993
+
 
 **Edited-frame-guided editing (IV2V)**: edits given as two edited reference frames are propagated to every shot.
 
-https://github.com/user-attachments/assets/9e468c28-1601-408d-9d63-e26829182dac
 
-<sub>Source video: AI-generated cinematic clip.</sub>
+
+https://github.com/user-attachments/assets/3226130d-8a5e-4175-bb88-3c7cb63de902
+
+
 
 **Beyond-training-horizon editing**: a 25-second video, longer than any video seen during training (15 s).
 
-https://github.com/user-attachments/assets/25f566f3-f396-4f87-b05b-e6c410e3d4bc
 
-<sub>Source video: AI-generated 2D animation clip.</sub>
+
+https://github.com/user-attachments/assets/ad3e45c7-fc75-4f97-834c-ddb2a4f1fa15
+
+
 
 ### Method
 
