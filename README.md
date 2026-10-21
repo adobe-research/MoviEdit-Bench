@@ -80,8 +80,6 @@ MoviEdit-Bench contains **64 generated multi-shot source videos** (4–6 shots, 
 - **Edits:** local (add, remove, appearance change, swap) and global (environment change, stylization)
 - **Metrics:** 7 dimensions — non-subject preservation, edit localization, subject preservation, cross-shot edit consistency, edit-prompt alignment, video quality, edited-frame fidelity (IV2V) — plus an aggregate **Overall Edit Success** score
 
-All source videos are generated from scratch with a multi-shot text-to-video model, so the benchmark is free of copyrighted footage.
-
 See [`bench/README.md`](bench/README.md) for details.
 
 ## License
