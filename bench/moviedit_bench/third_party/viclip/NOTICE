@@ -1,0 +1,3 @@
+Vendored from OpenGVLab/InternVideo (https://github.com/OpenGVLab/InternVideo),
+path Data/InternVid/viclip/, commit 73271ba565bbcd2b3a56ac54f5f5a8a0c5661e9f, without modification.
+ViCLIP is not installable via pip. See the upstream repository for its license.

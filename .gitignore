@@ -1,0 +1,17 @@
+# Paper draft (reference only, not for release)
+*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Benchmark data / outputs
+bench/data/
+bench/moviedit_reference/
+bench/outputs/
+bench/*.zip
+
+# Internal-only tooling (never publish)
+_internal/
