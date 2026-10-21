@@ -1,7 +1,4 @@
 Only the following files are licensed under the Adobe Research License:
-* README.md
-* bench/README.md
-* bench/scripts/serve_vlm.sh
 * bench/moviedit_bench/\_\_init__.py
 * bench/moviedit_bench/data.py
 * bench/moviedit_bench/evaluate.py
