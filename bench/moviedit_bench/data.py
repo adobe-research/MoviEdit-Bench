@@ -19,13 +19,20 @@ One line of ``benchmark.jsonl`` / ``benchmark_iv2v.jsonl`` (paths relative to th
 
 ``eval_metadata.json``::
 
-    {"samples": {"C1_4_A": {"category": "C1", "shots": [[0, 96], [96, 188], ...]}},   # [start, end)
+    {"samples": {"C1_4_A": {
+         "category": "C1",
+         "shots": [[0, 96], [96, 188], ...],                              # [start, end)
+         "source_prompt": "<description of the whole source video>",
+         "source_shot_prompts": ["<description of shot 0 of the source>", ...]}},
      "instructions": {"C1_4_A__remove__01": {
          "target": {"type": "character", "id": "char_a",
                     "mask": "masks/C1_4_A_char_a.mp4",   # null for global edits
                     "shots": [0, 1, 2, 3]},              # shots the target appears in
-         "shot_prompts": ["<description of shot 0 after the edit>", ...],
-         "target_prompt": "<description of the whole edited video>"}}}
+         "target_prompt": "<description of the whole edited video>",
+         "target_shot_prompts": ["<description of shot 0 after the edit>", ...]}}}
+
+The metrics only use ``target_shot_prompts``. The other prompts are inputs for methods conditioned on
+descriptions of the source / edited video instead of an edit instruction.
 """
 
 from __future__ import annotations
@@ -49,10 +56,14 @@ class Scenario:
     category: str
     task: str
     edit_instruction: str
-    target_prompt: str  # input for methods conditioned on a target-video prompt; not used by the metrics
     source_video: Path
     shots: tuple[tuple[int, int], ...]  # every shot of the video, [start, end)
-    shot_prompts: tuple[str, ...]  # per-shot description of the edited video, parallel to `shots`
+    # Descriptions of the source / edited video; the *_shot_prompts are parallel to `shots`. Only
+    # target_shot_prompts is used by the metrics, the rest are inputs for prompt-conditioned methods.
+    source_prompt: str
+    source_shot_prompts: tuple[str, ...]
+    target_prompt: str
+    target_shot_prompts: tuple[str, ...]
     target_type: str  # character | animal | object | scene
     target_id: str | None
     target_mask: Path | None  # binary mask video of the edit target; None for global edits
@@ -81,8 +92,12 @@ def load_scenarios(data_root: Path, mode: str) -> list[Scenario]:
         is_global = row["task"] in GLOBAL_TASKS
         if row["task"] not in TASKS:
             raise ValueError(f"{iid}: unknown task {row['task']!r}")
-        if len(ev["shot_prompts"]) != len(shots):
-            raise ValueError(f"{iid}: shot_prompts must have one entry per shot")
+        if "target_shot_prompts" not in ev:
+            raise ValueError(f"{iid}: no target_shot_prompts in {EVAL_FILE}; re-download the benchmark data")
+        for name, prompts in (("source_shot_prompts", sample["source_shot_prompts"]),
+                              ("target_shot_prompts", ev["target_shot_prompts"])):
+            if len(prompts) != len(shots):
+                raise ValueError(f"{iid}: {name} must have one entry per shot")
         if not is_global and not target.get("mask"):
             raise ValueError(f"{iid}: local edits require a target mask")
 
@@ -97,10 +112,12 @@ def load_scenarios(data_root: Path, mode: str) -> list[Scenario]:
             category=sample["category"],
             task=row["task"],
             edit_instruction=row["edit_instruction"],
-            target_prompt=ev.get("target_prompt", ""),
             source_video=data_root / row["source_video"],
             shots=shots,
-            shot_prompts=tuple(ev["shot_prompts"]),
+            source_prompt=sample["source_prompt"],
+            source_shot_prompts=tuple(sample["source_shot_prompts"]),
+            target_prompt=ev["target_prompt"],
+            target_shot_prompts=tuple(ev["target_shot_prompts"]),
             target_type=target["type"],
             target_id=target.get("id"),
             target_mask=None if is_global else data_root / target["mask"],

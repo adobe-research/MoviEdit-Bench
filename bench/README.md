@@ -33,12 +33,12 @@ The metrics combine pixel- and embedding-based scores computed on one GPU with j
 
 ## Data
 
-**Download:** [`moviedit_bench_data.zip`](https://drive.google.com/file/d/1qAXvziFpdV2cEXHTNR8_DABJ46sIBW-s/view?usp=sharing) (Google Drive, 604 MB). Unzip it inside `bench/` to get `bench/data/`.
+**Download:** [`moviedit_bench_data.zip`](https://drive.google.com/file/d/1RU2kO5eBggu2zxgMYSbreMx3oXlIL_iX/view?usp=sharing) (Google Drive, 604 MB). Unzip it inside `bench/` to get `bench/data/`.
 
 ```bash
 cd bench
 unzip moviedit_bench_data.zip        # creates data/
-sha256sum moviedit_bench_data.zip    # 33a69306828cf12b0a7e6946c00c7910720ed4e79514de1066ba17c87f4a8cbf
+sha256sum moviedit_bench_data.zip    # 958621491d291170e14d516fa3308959793b55b56087f246d88172bf267ade02
 ```
 
 The benchmark directory separates what a model needs from what only the evaluation needs:
@@ -74,7 +74,9 @@ data/
   "samples": {
     "C1_4_A": {
       "category": "C1",
-      "shots": [[0, 96], [96, 188], [188, 291], [291, 361]]   // [start, end) frame range of each shot
+      "shots": [[0, 96], [96, 188], [188, 291], [291, 361]],   // [start, end) frame range of each shot
+      "source_prompt": "<global + per-shot description of the whole source video>",
+      "source_shot_prompts": ["<description of shot 0 of the source>", "..."]   // one per shot
     }
   },
   "instructions": {
@@ -85,8 +87,8 @@ data/
         "mask": "masks/C1_4_A_char_a.mp4",
         "shots": [0, 1, 2, 3]          // shots in which the target appears
       },
-      "shot_prompts": ["<description of shot 0 after the edit>", "..."],   // one per shot
-      "target_prompt": "<global + per-shot description of the whole edited video>"
+      "target_prompt": "<global + per-shot description of the whole edited video>",
+      "target_shot_prompts": ["<description of shot 0 after the edit>", "..."]   // one per shot
     }
   }
 }
@@ -101,7 +103,7 @@ Run your model once per line of the inference file and save the result as **`{in
 | V2V | `benchmark.jsonl` | `source_video`, `edit_instruction` |
 | IV2V | `benchmark_iv2v.jsonl` | `source_video`, `edit_instruction`, and the edited frame in `edited_frame_paths`, which is the edited version of source frame `reference_frame_indices[0]` |
 
-- **Do not use anything from `eval_metadata.json` or `masks/` as model input.** One exception: a method that is conditioned on a description of the edited video instead of an edit instruction (e.g., SDEdit, Wan-Edit) may use `target_prompt`.
+- **Do not use anything from `eval_metadata.json` or `masks/` as model input.** One exception: a method that is conditioned on descriptions of the source and edited videos instead of an edit instruction (e.g., SDEdit, Wan-Edit) may use the `source_*` and `target_*` prompts.
 - **Length:** output all 361 frames at 24 fps, frame-aligned with the source. If a video is shorter, only the frames it has are evaluated, and the run prints a warning.
 - **Resolution:** any. The evaluator resizes source, output, and masks to 960×544.
 - Use separate output directories for V2V and IV2V.

@@ -92,7 +92,7 @@ def mfs(s: Scenario, v: ScenarioVideos, models: Models) -> float | None:
 
 def _shot_clips(s: Scenario, v: ScenarioVideos):
     """(shot text, 8 uniformly sampled RGB frames of the edited shot) for every shot."""
-    for shot, text in zip(s.shots, s.shot_prompts):
+    for shot, text in zip(s.shots, s.target_shot_prompts):
         start, end = v.shot_range(shot)
         frames = v.edited[start:end]
         if frames:
@@ -114,7 +114,7 @@ def viclip_text_alignment(s: Scenario, v: ScenarioVideos, models: Models) -> flo
 def pickscore(s: Scenario, v: ScenarioVideos, models: Models) -> float | None:
     """PickScore of every edited frame against its shot's target description (pooled over frames)."""
     scores = []
-    for shot, text in zip(s.shots, s.shot_prompts):
+    for shot, text in zip(s.shots, s.target_shot_prompts):
         start, end = v.shot_range(shot)
         if end > start:
             scores.extend(models.pickscore(to_rgb(v.edited[start:end]), text))
