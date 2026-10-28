@@ -96,6 +96,9 @@ data/
 
 ## Generating Your Model's Outputs
 
+> [!NOTE]
+> This benchmark does not include inference code for individual editing methods. Users are expected to run their chosen methods on the benchmark scenarios and generate outputs in the format described below. For example, an external project like [Open Multi-Shot Edit](https://github.com/hyn2028/open-multishot-edit) may be useful for running existing open-source video editing methods on multi-shot videos.
+
 Run your model once per line of the inference file and save the result as **`{instruction_id}.mp4`**, all in one directory.
 
 | Task | Inference file | Model inputs |
