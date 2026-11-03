@@ -15,7 +15,7 @@
 <sup>\*</sup>Equal Contribution &nbsp;&nbsp; <sup>†</sup>Tech Lead
 
 <a href="https://multi-shot-edit.github.io/"><img src="https://img.shields.io/badge/Project_Page-MoviEdit-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project Page"></a>
-<img src="https://img.shields.io/badge/arXiv-Coming_Soon-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="Paper (coming soon)">
+<a href="https://arxiv.org/abs/2611.02737"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv Paper"></a>
 
 
 https://github.com/user-attachments/assets/3dfe97ee-b0ff-40f2-8003-a7b9d8a796c7
